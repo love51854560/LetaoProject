@@ -1,0 +1,35 @@
+.banner {
+  width: 100%;
+  margin-top: 45px;
+}
+.nav {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+}
+.nav li {
+  width: 33.3%;
+  float: left;
+}
+.cate {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+.cate li {
+  width: 48%;
+  border: 1px solid #cccccc;
+  float: left;
+  padding: 10px;
+  text-align: center;
+}
+.cate li:nth-child(odd) {
+  margin-right: 4%;
+}
+.cate li .price span:nth-child(1) {
+  color: red;
+}
+.cate li .price span:nth-child(2) {
+  text-decoration: line-through;
+}

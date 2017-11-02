@@ -1,0 +1,153 @@
+a:link, a:visited, a:hover, a:active{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.mt150{
+    margin-top: 150px;
+}
+
+.container .panel{
+    border-color: #337ab7;
+}
+
+.container .panel .panel-heading{
+    text-align: center;
+}
+
+.container .panel .panel-heading h3{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.lt_aside{
+    width: 180px;
+    height: 100%;
+    background-color: #222d32;
+    position: absolute;
+    left: 0;
+    transition: all 1s;
+}
+
+.now{
+    left:-180px;
+}
+
+.lt_aside .brand a{
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    display: block;
+    background-color: #337ab7;
+}
+
+.lt_aside .user img{
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 30px auto 10px;
+}
+
+.lt_aside .user p{
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+}
+
+.lt_aside ul{
+    padding-left: 0;
+}
+
+.lt_aside .nav ul li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #ccc;
+    padding-left: 30px;
+    border: 3px solid transparent;
+}
+
+.lt_aside .nav ul .child{
+    display: none;
+}
+
+.lt_main{
+    padding-left: 180px;
+    transition: all 1s;
+}
+
+.now1{
+    padding-left: 0;
+}
+
+.lt_head{
+    height: 50px;
+    line-height: 50px;
+    background-color: #3c8dbc;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.current{
+    background-color: #1d1f21;
+    border-left-color: #367fa9;
+    color: #fff;
+}
+
+.lt_head a{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.content .chart-left,
+.content .chart-right{
+    width:45%;
+    height: 400px;
+}
+
+.mb20{
+    margin-bottom: 20px;
+}
+
+.fileBox{
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    position: relative;
+}
+
+.fileBox button{
+    width: 100%;
+    height: 100%;
+}
+
+.fileBox:hover button {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.fileBox input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+
+
+
+
+
+

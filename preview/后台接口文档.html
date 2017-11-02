@@ -1,0 +1,600 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:后台接口文档</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="-">商城后台接口汇总</h1>
+<p>###员工模块</p>
+<ul>
+<li><a href="#employee-login">登录接口</a></li>
+<li><a href="#employee-logout">登出接口</a></li>
+<li><a href="#check-root-login">判断员工是否登录</a></li>
+</ul>
+<p>###产品模块</p>
+<ul>
+<li><a href="#add-product">产品新增(大改动)</a></li>
+<li><a href="#add-product-pic">添加产品图片</a>    </li>
+<li><a href="#update-product">产品修改(大改动)</a> </li>
+<li><a href="#query-product-detail-list">产品详情</a></li>
+</ul>
+<p>###分类模块</p>
+<ul>
+<li><a href="#add-top-category">一级分类新增</a>   </li>
+<li><a href="#update-top-category">一级分类修改</a></li>
+<li><a href="#query-top-category-paging">一级分类查询</a>   分页  页数、每页条数</li>
+<li><a href="#add-second-category">二级分类新增</a>  </li>
+<li><a href="#add-second-category-pic">二级分类新增图片</a>  </li>
+<li><a href="#update-second-category">二级分类修改</a>  </li>
+<li><a href="#query-second-category-paging">二级分类查询</a>   分页  页数、每页条数</li>
+</ul>
+<p>###用户模块</p>
+<ul>
+<li><a href="#query-user">用户查询</a>  </li>
+<li><a href="#update-user">用户启用停用</a></li>
+<li><a href="">品牌销量比较</a>  写死</li>
+<li><p><a href="">某产品按时间的销量图</a>    写死
+##员工模块</p>
+<h3 id="employee-login">employee-login</h3>
+</li>
+<li><p>接口名称
+登录接口</p>
+</li>
+<li>接口地址
+ /employee/employeeLogin</li>
+<li>请求方式
+  POST</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+username|是|用户名
+password|是|用户密码</li>
+<li>示例<pre><code class="lang-javascript">{&quot;username&quot;:&quot;root&quot;,&quot;password&quot;,&quot;123456&quot;}
+</code></pre>
+</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+//error 1000 用户名错误  1001 密码错误
+</code></pre>
+</li>
+</ul>
+<h3 id="employee-logout">employee-logout</h3>
+<ul>
+<li>接口名称
+登出接口</li>
+<li>接口地址
+/employee/employeeLogout</li>
+<li>请求方式
+GET</li>
+<li>参数说明
+无</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="check-root-login">check-root-login</h3>
+</li>
+<li>接口名称
+判断管理员登录</li>
+<li>接口地址
+ /employee/checkRootLogin</li>
+<li>请求方式
+  GET</li>
+<li>参数说明</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+//error 
+{ &quot;error&quot;: 400, &quot;message&quot;: &quot;未登录！&quot; }
+</code></pre>
+##产品模块    <h3 id="add-product">add-product</h3>
+</li>
+<li>接口名称
+产品新增 （需要登录）</li>
+<li>接口地址
+/product/addProduct</li>
+<li>请求方式
+POST  </li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+proName|是|产品名称
+oldPrice|是|老价格
+price|是|价格
+proDesc|是|产品描述
+size|是|产品尺寸
+statu|是|产品上下架
+num|是|用户库存
+brandId|是|归属品牌
+pic图片数组[{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;},{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;}]</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="add-product-pic">add-product-pic</h3>
+</li>
+<li>接口名称
+上传图片 （需要登录）</li>
+<li>接口地址
+/product/addProductPic</li>
+<li>请求方式
+POST  enctype=&quot;multipart/form-data&quot;</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+pic1图片1
+pic2图片2
+pic3图片3</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+[{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;},{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;}]
+</code></pre>
+<h3 id="update-product">update-product</h3>
+</li>
+<li>接口名称
+产品修改 （需要登录）</li>
+<li>接口地址
+/product/updateProduct</li>
+<li>请求方式
+POST  </li>
+<li><p>参数说明
+参数名称|是否必须|说明
+--|--|--
+id |是|产品id
+proName|是|产品名称
+oldPrice|是|老价格
+price|是|价格
+proDesc|是|产品描述
+size|是|产品尺寸
+statu|是|产品上下架
+num|是|用户库存
+brandId|是|归属品牌
+pic图片数组[{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;},{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;}]</p>
+</li>
+<li><p>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</p>
+</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="query-product-detail-list">query-product-detail-list</h3>
+</li>
+<li>接口名称
+产品列表查询 （需要登录）</li>
+<li>接口地址
+/product/queryProductDetailList</li>
+<li>请求方式
+GET</li>
+<li><p>参数说明
+参数名称|是否必须|说明
+--|--|--
+page|是|页数
+pageSize|是|每页条数</p>
+</li>
+<li><p>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</p>
+</li>
+<li>示例<pre><code class="lang-javascript">//success
+[{
+  &quot;id&quot;: 1,
+  &quot;proName&quot;: &#39;羽绒服&#39;,
+  &quot;oldPrice&quot;: 998,
+  &quot;price&quot;: 600,
+  &quot;proDesc&quot;: &quot;质量好&quot;,
+  &quot;size&quot;: &#39;170-195&#39;,
+  &quot;statu&quot;: 1,
+  &quot;updateTime&quot;: 2012-12-01T04:05:23.000Z,
+  &quot;num&quot;: 1,
+  &quot;brandId&quot;: 1 },
+ {
+  &quot;id&quot;: 2,
+  &quot;proName&quot;: &#39;羽绒服&#39;,
+  &quot;oldPrice&quot;: 998,
+  &quot;price&quot;: 599,
+  &quot;proDesc&quot;: &#39;/样子新&#39;,
+  &quot;size&quot;: &#39;170-195&#39;,
+  &quot;statu&quot;: 1,
+  &quot;updateTime&quot;: 2012-12-01T04:05:23.000Z,
+  &quot;num&quot;: 2,
+  &quot;brandId&quot;: 1 } ]
+</code></pre>
+##分类模块<h3 id="add-top-category">add-top-category</h3>
+</li>
+<li>接口名称
+添加1级分类 （需要登录）</li>
+<li>接口地址
+/category/addTopCategory</li>
+<li>请求方式
+POST</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+categoryName|是|分类名称</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="update-top-category">update-top-category</h3>
+</li>
+<li>接口名称
+更新1级分类 （需要登录）</li>
+<li>接口地址
+/category/addTopCategory</li>
+<li>请求方式
+POST</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+id|是|分类id
+categoryName|是|分类名称
+isDelete|是|是否启用</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="query-top-category-paging">query-top-category-paging</h3>
+</li>
+<li>接口名称
+查询1级分类列表 （需要登录）</li>
+<li>接口地址
+/category/queryTopCategoryPaging</li>
+<li>请求方式
+GET</li>
+<li><p>参数说明
+参数名称|是否必须|说明
+--|--|--
+page|是|页数
+pageSize|是|每页条数</p>
+</li>
+<li><p>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</p>
+</li>
+<li>示例<pre><code class="lang-javascript">[
+{
+  &quot;id&quot;: 1,
+  &quot;categoryName&quot;: &quot;女装&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 2,
+  &quot;categoryName&quot;: &quot;男装&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 3,
+  &quot;categoryName&quot;: &quot;家电&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 4,
+  &quot;categoryName&quot;: &quot;家具&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 5,
+  &quot;categoryName&quot;: &quot;箱包&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 6,
+  &quot;categoryName&quot;: &quot;珠宝&quot;,
+  &quot;isDelete&quot;: 1
+}
+]
+</code></pre>
+<h3 id="add-second-category">add-second-category</h3>
+</li>
+<li>接口名称
+添加二级分类 （需要登录）</li>
+<li>接口地址
+/category/addSecondCategory</li>
+<li>请求方式
+POST </li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+brandName|是|品牌名称
+categoryId|是|所属分类id
+brandLogo|是|品牌logo图片地址
+hot|是|火热的品牌</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="add-second-category-pic">add-second-category-pic</h3>
+</li>
+<li>接口名称
+上传图片 （需要登录）</li>
+<li>接口地址
+/category/addSecondCategoryPic</li>
+<li>请求方式
+POST  enctype=&quot;multipart/form-data&quot;</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+pic1 图片</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;picAddr&quot;:&quot;product/24-1.png&quot;}
+</code></pre>
+<h3 id="update-second-category">update-second-category</h3>
+</li>
+<li>接口名称
+更新2级分类（需要登录）</li>
+<li>接口地址
+/category/updateSecondCategory</li>
+<li>请求方式
+POST  enctype=&quot;multipart/form-data&quot;</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+id|是|品牌id
+brandName|是|品牌名称
+categoryId|是|所属分类id
+brandLogo|是|品牌logo图片 (上传文件)
+isDelete|是|是否启用
+hot|是|火热的品牌</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="query-second-category-paging">query-second-category-paging</h3>
+</li>
+<li>接口名称
+查询2级分类 （需要登录）</li>
+<li>接口地址
+/category/querySecondCategoryPaging</li>
+<li>请求方式
+GET</li>
+<li><p>参数说明
+参数名称|是否必须|说明
+--|--|--
+page|是|页数
+pageSize|是|每页条数</p>
+</li>
+<li><p>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</p>
+</li>
+<li>示例<pre><code class="lang-javascript">{
+page: 1,
+size: 5,
+data: 
+ [  {
+     id: 1,
+     brandName: &#39;耐克&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/1.jpg&#39;,
+     isDelete: 1,
+     hot: 1 },
+    {
+     id: 2,
+     brandName: &#39;阿迪&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/2.jpg&#39;,
+     isDelete: 1,
+     hot: 1 },
+    {
+     id: 3,
+     brandName: &#39;新百伦&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/3.jpg&#39;,
+     isDelete: 1,
+     hot: 1 },
+    {
+     id: 4,
+     brandName: &#39;哥伦比亚&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/4.jpg&#39;,
+     isDelete: 1,
+     hot: 0 },
+    {
+     id: 5,
+     brandName: &#39;匡威&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/5.jpg&#39;,
+     isDelete: 1,
+     hot: 1 } ],
+count: 9 }
+</code></pre>
+##用户模块<h3 id="query-user">query-user</h3>
+</li>
+<li>接口名称
+查询用户 （需要登录）</li>
+<li>接口地址
+/user/queryUser</li>
+<li>请求方式
+GET</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+page|是|页码
+pageSize|是|每页条数</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{
+page: 1,
+size: 5,
+data: 
+ [  {
+     id: 1,
+     username: &#39;klt&#39;,
+     password: &#39;456&#39;,
+     mobile: &#39;13902060052&#39;,
+     isDelete: 1 },
+    {
+     id: 2,
+     username: &#39;zhoushugang&#39;,
+     password: &#39;4QrcOUm6Wau+VuBX8g+IPg==&#39;,
+     mobile: &#39;15102324243&#39;,
+     isDelete: 1 },
+    {
+     id: 3,
+     username: &#39;zhoushugang12&#39;,
+     password: &#39;4QrcOUm6Wau+VuBX8g+IPg==&#39;,
+     mobile: &#39;15102334243&#39;,
+     isDelete: 1 } ],
+count: 3 }
+</code></pre>
+<h3 id="update-user">update-user</h3>
+</li>
+<li>接口名称
+产品修改 （需要登录）</li>
+<li>接口地址
+/user/updateUser</li>
+<li>请求方式
+POST</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+id|是|用户id
+isDelete|是|是否启停</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+</li>
+</ul>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

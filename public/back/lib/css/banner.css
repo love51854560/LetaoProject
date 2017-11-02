@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.banner {
+  padding-top: 1.8rem;
+}
+.banner .swiper-container-horizontal > .swiper-pagination-bullets,
+.banner .swiper-pagination-custom,
+.banner .swiper-pagination-fraction {
+  left: auto;
+  bottom: 0.2rem;
+  width: auto;
+  right: 0.2rem;
+}

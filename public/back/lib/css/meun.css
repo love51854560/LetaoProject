@@ -1,0 +1,26 @@
+@charset "UTF-8";
+.menu {
+  width: 100%;
+  max-width: 750px;
+  height: 1.44rem;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+}
+.menu li {
+  float: left;
+  width: 20%;
+}
+.menu a {
+  margin-top: 0.2rem;
+  display: block;
+  width: 100%;
+}
+.menu img {
+  margin: 0 auto;
+  width: 0.72rem;
+  height: 0.72rem;
+}
+.menu p {
+  text-align: center;
+}
